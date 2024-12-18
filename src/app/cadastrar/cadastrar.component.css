@@ -1,0 +1,39 @@
+#img-bg{
+    background-image: url("https://ipeafro.org.br/wp-content/uploads/2022/02/POSTER-A3-Okê-Oxóssi.jpg");
+
+    min-height: 900px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.mxr-7{
+    margin-right: 7px;
+}
+
+.css-selector {
+    background: linear-gradient(214deg, #072955, #1e5eb1, #76b1ff);
+    background-size: 600% 600%;
+ 
+    -webkit-animation: AnimationName 8s ease infinite;
+    -moz-animation: AnimationName 8s ease infinite;
+    animation: AnimationName 8s ease infinite;
+ }
+ 
+ @-webkit-keyframes AnimationName {
+    0%{background-position:50% 0%}
+    50%{background-position:51% 100%}
+    100%{background-position:50% 0%}
+ }
+ @-moz-keyframes AnimationName {
+    0%{background-position:50% 0%}
+    50%{background-position:51% 100%}
+    100%{background-position:50% 0%}
+ }
+ @keyframes AnimationName {
+    0%{background-position:50% 0%}
+    50%{background-position:51% 100%}
+    100%{background-position:50% 0%}
+ }
