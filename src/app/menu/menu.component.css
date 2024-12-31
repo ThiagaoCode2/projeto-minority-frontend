@@ -1,0 +1,17 @@
+.fs-16{
+    font-size:16pt;
+}
+.pxl-7{
+    padding-left: 7px;
+}
+
+a{
+   cursor: pointer;
+}
+
+.fundin-gif{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('https://imgur.com/a/c1DWNJE.gif')
+}
