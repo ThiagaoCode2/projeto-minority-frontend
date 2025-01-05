@@ -10,7 +10,7 @@ import { AuthService } from '../service/auth.service';
   templateUrl: './cadastrar.component.html',
   styleUrl: './cadastrar.component.css'
 })
-export class CadastrarComponentimplements implements OnInit 
+export class CadastrarComponent implements OnInit 
 {
 
   usuario: Usuario = new Usuario
