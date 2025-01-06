@@ -12,10 +12,7 @@ import { UsuarioLogin } from '../model/UsuarioLogin';
 export class AuthService 
 {
 
-  constructor(
-    private http: HttpClient,
-    private router: Router
-  ) { }
+  constructor( private http: HttpClient, private router: Router ) { }
   
   token = {
     headers: new HttpHeaders( ).set( 'Authorization', environment.token ),

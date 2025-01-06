@@ -1,36 +1,49 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Injector, Inject, PLATFORM_ID } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { AlertasComponent } from '../alertas/alertas.component';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlertasService 
 {
+  private bsModalService!: BsModalService;
 
   constructor(
-    private bsModalService: BsModalService
-  ) { }
-
-  private showAlert( message: string, type: string )
+    private injector: Injector,
+    @Inject( PLATFORM_ID ) private platformId: Object
+  ) 
   {
-    const bsModalRef: BsModalRef = this.bsModalService.show( AlertasComponent )
-    bsModalRef.content.type    = type
-    bsModalRef.content.message = message
+    if( isPlatformBrowser( this.platformId ) ) 
+    {
+      // Apenas inicializa o BsModalService no cliente (navegador)
+      this.bsModalService = this.injector.get( BsModalService );
+    }
   }
 
-  showAlertDanger( message: string )
+  private showAlert( message: string, type: string ) 
   {
-    this.showAlert( message, 'danger' )
+    if( this.bsModalService ) 
+    {
+      const bsModalRef: BsModalRef = this.bsModalService.show( AlertasComponent );
+      bsModalRef.content.type = type;
+      bsModalRef.content.message = message;
+    }
   }
 
-  showAlertSuccess( message: string )
+  showAlertDanger( message: string ) 
   {
-    this.showAlert( message,'success' )
+    this.showAlert( message, 'danger' );
   }
 
-  showAlertInfo( message: string )
+  showAlertSuccess( message: string ) 
   {
-    this.showAlert( message, 'info' )
+    this.showAlert( message, 'success' );
+  }
+
+  showAlertInfo( message: string ) 
+  {
+    this.showAlert( message, 'info' );
   }
 }
