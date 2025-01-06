@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { environment } from '../../../environments/environment.prod';
 import { Postagem } from '../../model/Postagem';
 import { Tema } from '../../model/Tema';
 import { AlertasService } from '../../service/alertas.service';
 import { PostagemService } from '../../service/postagem.service';
 import { TemaService } from '../../service/tema.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-postagem-edit',
-  imports: [],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './postagem-edit.component.html',
   styleUrl: './postagem-edit.component.css'
 })

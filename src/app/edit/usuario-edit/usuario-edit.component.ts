@@ -4,10 +4,11 @@ import { environment } from '../../../environments/environment.prod';
 import { Usuario } from '../../model/Usuario';
 import { AlertasService } from '../../service/alertas.service';
 import { AuthService } from '../../service/auth.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-usuario-edit',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './usuario-edit.component.html',
   styleUrl: './usuario-edit.component.css'
 })

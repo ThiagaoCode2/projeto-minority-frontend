@@ -3,15 +3,18 @@ import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { Usuario } from '../model/Usuario';
 import { environment } from '../../environments/environment.prod';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 import { AuthService } from '../service/auth.service';
 import { AlertasService } from '../service/alertas.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { OrderByPipe } from '../pipes/order-by.pipe';
 
 @Component({
   selector: 'app-inicio',
-  imports: [],
+  imports: [CommonModule, FormsModule, RouterModule, OrderByPipe],
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.css'
 })

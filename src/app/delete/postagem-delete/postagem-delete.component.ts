@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { environment } from '../../../environments/environment.prod';
 import { Postagem } from '../../model/Postagem';
 import { AlertasService } from '../../service/alertas.service';
 import { PostagemService } from '../../service/postagem.service';
+import { CommonModule } from '@angular/common'; 
 
 @Component({
   selector: 'app-postagem-delete',
-  imports: [],
+  imports: [CommonModule, RouterModule],
   templateUrl: './postagem-delete.component.html',
   styleUrl: './postagem-delete.component.css'
 })

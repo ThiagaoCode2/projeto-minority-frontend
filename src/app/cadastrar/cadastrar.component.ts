@@ -3,10 +3,11 @@ import { Router } from '@angular/router';
 import { Usuario } from '../model/Usuario';
 import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastrar',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './cadastrar.component.html',
   styleUrl: './cadastrar.component.css'
 })

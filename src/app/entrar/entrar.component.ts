@@ -4,10 +4,11 @@ import { AuthService } from '../service/auth.service';
 import { Router } from '@angular/router';
 import { AlertasService } from '../service/alertas.service';
 import { environment } from '../../environments/environment.prod';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-entrar',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './entrar.component.html',
   styleUrl: './entrar.component.css'
 })

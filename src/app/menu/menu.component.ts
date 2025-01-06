@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../environments/environment.prod';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../service/auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-menu',
-  imports: [],
+  imports: [CommonModule, RouterModule],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })

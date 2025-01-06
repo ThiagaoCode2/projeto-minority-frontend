@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule  } from '@angular/router';
 import { environment } from '../../../environments/environment.prod';
 import { Tema } from '../../model/Tema';
 import { AlertasService } from '../../service/alertas.service';
 import { TemaService } from '../../service/tema.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-tema-edit',
-  imports: [],
+  imports: [FormsModule, RouterModule ],
   templateUrl: './tema-edit.component.html',
   styleUrl: './tema-edit.component.css'
 })

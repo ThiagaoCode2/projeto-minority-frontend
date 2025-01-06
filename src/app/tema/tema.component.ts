@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Tema } from '../model/Tema';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { environment } from '../../environments/environment.prod';
 import { AlertasService } from '../service/alertas.service';
 import { TemaService } from '../service/tema.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-tema',
-  imports: [],
+  imports: [CommonModule, RouterModule, FormsModule],
   templateUrl: './tema.component.html',
   styleUrl: './tema.component.css'
 })

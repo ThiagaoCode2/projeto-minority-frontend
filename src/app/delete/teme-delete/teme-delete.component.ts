@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { environment } from '../../../environments/environment.prod';
 import { Tema } from '../../model/Tema';
 import { AlertasService } from '../../service/alertas.service';
@@ -7,7 +7,7 @@ import { TemaService } from '../../service/tema.service';
 
 @Component({
   selector: 'app-teme-delete',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './teme-delete.component.html',
   styleUrl: './teme-delete.component.css'
 })
