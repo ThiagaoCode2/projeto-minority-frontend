@@ -15,7 +15,7 @@ import { AuthService } from './service/auth.service';
     RodapeComponent
   ],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'] // Corrigi o nome para "style**s**Url"
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent 
 {
