@@ -5,14 +5,17 @@ import { Router } from '@angular/router';
 import { AlertasService } from '../service/alertas.service';
 import { environment } from '../../environments/environment.prod';
 import { FormsModule } from '@angular/forms';
+import { BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-entrar',
+  standalone: true,
   imports: [FormsModule],
+  providers: [BsModalService, AlertasService],
   templateUrl: './entrar.component.html',
   styleUrl: './entrar.component.css'
 })
-export class EntrarComponent implements OnInit 
+export class EntrarComponent 
 {
   usuarioLogin: UsuarioLogin = new UsuarioLogin( )
 
@@ -22,14 +25,9 @@ export class EntrarComponent implements OnInit
     private alertas: AlertasService
   ) { }
 
-  ngOnInit( ) 
+  clickEntrar( )
   {
-    window.scroll( 0,0 )
-  }
-
-  entrar( )
-  {
-    
+    console.log('Entrar clicado!');
     this.auth.entrar( this.usuarioLogin ).subscribe( ( resp: UsuarioLogin )=> {
       this.usuarioLogin = resp
 
@@ -42,18 +40,18 @@ export class EntrarComponent implements OnInit
       this.router.navigate( ['/inicio'] )
 
     }, erro =>{
-      if( erro.status == 500 )
-      {
-        this.alertas.showAlertDanger( 'Usuário ou senha esão incorretos!' )
-      }
-
-      if( erro.status == 400 )
+      if( erro.status == 500 || erro.status == 400 )
       {
         this.alertas.showAlertDanger( 'Usuário ou senha esão incorretos!' )
       }
 
     })
 
+  }
+
+  clickIrCadastro( )
+  {
+    this.router.navigate( ['/cadastrar'] )
   }
 
 }

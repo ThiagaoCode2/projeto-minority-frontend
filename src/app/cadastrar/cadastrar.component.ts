@@ -4,14 +4,17 @@ import { Usuario } from '../model/Usuario';
 import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { FormsModule } from '@angular/forms';
+import { BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-cadastrar',
+  standalone: true,
   imports: [FormsModule],
+  providers: [BsModalService, AlertasService],
   templateUrl: './cadastrar.component.html',
   styleUrl: './cadastrar.component.css'
 })
-export class CadastrarComponent implements OnInit 
+export class CadastrarComponent
 {
 
   usuario: Usuario = new Usuario
@@ -25,11 +28,6 @@ export class CadastrarComponent implements OnInit
     private alertas:     AlertasService
   ) { }
 
-  ngOnInit( ) 
-  {
-    window.scroll( 0,0 )
-  }
-
   cadastrar( )
   {
     // console.log( JSON.stringify( this.usuario ) ) // -->  inicializao do cadastrar
@@ -37,7 +35,7 @@ export class CadastrarComponent implements OnInit
 
     if( this.usuario.senha != this.confirmarSenha )
     {
-      this.alertas.showAlertDanger("As senhas estão incorretas")
+      this.alertas.showAlertDanger( "As senhas estão incorretas" )
     } 
     else
     {
