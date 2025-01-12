@@ -31,15 +31,16 @@
                             placeholder="Link da sua foto">
                     </div>
 
-                    <div class="form-group">
-                        <label for="senha">Senha</label>
-                        <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="confirmSenha">Confirmar senha</label>
-                        <input [(ngModel)]="usuario.senha" class="form-control" type="password" name="confirmSenha" id="confirmSenha"
-                            placeholder="Confirme sua senha">
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label for="senha">Senha</label>
+                            <input (input)="confirmSenha($event)" class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
+                        </div>
+                    
+                        <div class="col-md-6">
+                            <label for="confirmSenha">Confirmar senha</label>
+                            <input [(ngModel)]="usuario.senha" class="form-control" type="password" name="confirmSenha" id="confirmSenha" placeholder="Confirme sua senha">
+                        </div>
                     </div>
 
                     <div class="form-group">
@@ -55,8 +56,8 @@
                     <br>
 
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-danger mxr-7" routerLink='/entrar'>Cancelar</button>
-                        <button type="submit" class="btn btn-success" (click)="cadastrar()">Cadastrar</button>
+                        <button type="submit" class="btn btn-danger mxr-7" (click)="clickOnEntrar( )">Cancelar</button>
+                        <button type="submit" class="btn btn-success" (click)="cadastrar( )">Cadastrar</button>
                     </div>
 
                 </div>

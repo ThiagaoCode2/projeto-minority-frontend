@@ -31,7 +31,7 @@ export class CadastrarComponent
   cadastrar( )
   {
     // console.log( JSON.stringify( this.usuario ) ) // -->  inicializao do cadastrar
-    this.usuario.tipo = this.tipoUsuario
+    this.usuario.tipoDeUsuario = this.tipoUsuario
 
     if( this.usuario.senha != this.confirmarSenha )
     {
@@ -56,6 +56,11 @@ export class CadastrarComponent
   tipoUser( event: any )
   {
     this.tipoUsuario = event.target.value
+  }
+
+  clickOnEntrar( )
+  {
+    this.router.navigate( ['/entrar'] )
   }
 
 }

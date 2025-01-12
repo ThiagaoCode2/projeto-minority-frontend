@@ -51,7 +51,7 @@ export class UsuarioEditComponent implements OnInit
 
   atualizar( ) 
   {
-    this.usuario.tipo = this.tipoUsuario
+    this.usuario.tipoDeUsuario = this.tipoUsuario
 
     if( this.usuario.senha != this.confirmarSenha ) 
     {

@@ -27,7 +27,6 @@ export class EntrarComponent
 
   clickEntrar( )
   {
-    console.log('Entrar clicado!');
     this.auth.entrar( this.usuarioLogin ).subscribe( ( resp: UsuarioLogin )=> {
       this.usuarioLogin = resp
 
@@ -49,7 +48,7 @@ export class EntrarComponent
 
   }
 
-  clickIrCadastro( )
+  clickOnCadastro( )
   {
     this.router.navigate( ['/cadastrar'] )
   }

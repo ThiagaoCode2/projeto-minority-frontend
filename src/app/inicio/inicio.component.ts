@@ -11,10 +11,13 @@ import { AlertasService } from '../service/alertas.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { OrderByPipe } from '../pipes/order-by.pipe';
+import { BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-inicio',
+  standalone: true,
   imports: [CommonModule, FormsModule, RouterModule, OrderByPipe],
+  providers: [BsModalService, AlertasService],
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.css'
 })
@@ -47,8 +50,6 @@ export class InicioComponent implements OnInit
 
   ngOnInit( ) 
   {
-    window.scroll( 0,0 )
-
     if( environment.token == "")  
     {
       this.alertas.showAlertInfo( 'Sua seção expirou, faça o login novamente.' )
