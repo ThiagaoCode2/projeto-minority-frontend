@@ -5,10 +5,13 @@ import { Usuario } from '../../model/Usuario';
 import { AlertasService } from '../../service/alertas.service';
 import { AuthService } from '../../service/auth.service';
 import { FormsModule } from '@angular/forms';
+import { BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-usuario-edit',
+  standalone: true,
   imports: [FormsModule],
+  providers: [BsModalService, AlertasService],
   templateUrl: './usuario-edit.component.html',
   styleUrl: './usuario-edit.component.css'
 })
@@ -28,8 +31,6 @@ export class UsuarioEditComponent implements OnInit
 
   ngOnInit( ) 
   {
-    window.scroll( 0, 0 )
-
     if( environment.token == "" ) 
     {
       this.router.navigate( ['/entrar'] )
@@ -79,6 +80,11 @@ export class UsuarioEditComponent implements OnInit
     this.authService.getByIdUsuario( id ).subscribe( ( resp: Usuario ) => {
       this.usuario = resp
     })
+  }
+
+  onRetornaInicio( )
+  {
+    this.router.navigate( ['/inicio'] )
   }
 
 }

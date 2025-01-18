@@ -38,8 +38,8 @@
             </div>
 
             <div class="form-group">
-                <label for="tipo">Tipo de Usuário</label>
-                <select class="form-control" name="tipo" id="tipo" (change)="tipoUser($event)">
+                <label for="tipoDeUsuario">Tipo de Usuário</label>
+                <select class="form-control" name="tipoDeUsuario" id="tipoDeUsuario" (change)="tipoUser($event)">
                     <option>Selecione um tipo de usuário</option>
                     <option value="normal">Normal</option>
                     <option value="admin">Administrador</option>
@@ -47,12 +47,29 @@
                 </select>
             </div>
 
+            <div class="form-group">
+                <label for="linkedin">Likedin</label>
+                <input [(ngModel)]="usuario.linkedin"  class="form-control" type="text" name="linkedin" id="linkedin" placeholder="Digite seu Link do Linkedin" > 
+            </div>
+
+            <div class="form-group">
+                <label for="profissao">Profissão</label>
+                <input [(ngModel)]="usuario.profissao" class="form-control" type="text" name="profissao" id="profissao"
+                    placeholder="Digite sua profissao">
+            </div>
+
+            <div class="form-group">
+                <label for="empresa">Empresa</label>
+                <input [(ngModel)]="usuario.empresa" class="form-control" type="text" name="empresa" id="empresa"
+                    placeholder="Empresa em que trabalha">
+            </div>
+
             <br>
 
             <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-danger mr-4" routerLink='/inicio'>Cancelar</button>
+                <button type="submit" class="btn btn-danger mr-4" (click)="onRetornaInicio( )">Cancelar</button>
 
-                <button type="submit" class="btn btn-success" (click)="atualizar()">Atualizar</button>
+                <button type="submit" class="btn btn-success" (click)="atualizar( )">Atualizar</button>
             </div>
 
         </div>

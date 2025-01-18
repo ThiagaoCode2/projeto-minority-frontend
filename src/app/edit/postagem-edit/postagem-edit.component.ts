@@ -8,10 +8,13 @@ import { PostagemService } from '../../service/postagem.service';
 import { TemaService } from '../../service/tema.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-postagem-edit',
+  standalone: true,
   imports: [CommonModule, FormsModule, RouterModule],
+  providers: [BsModalService, AlertasService],
   templateUrl: './postagem-edit.component.html',
   styleUrl: './postagem-edit.component.css'
 })
@@ -33,8 +36,6 @@ export class PostagemEditComponent implements OnInit
 
   ngOnInit( ) 
   {
-    window.scroll( 0,0 )
-
     if( environment.token == "" ) 
     {
       this.alertas.showAlertInfo( 'Sua seção expirou, faça o login novamente.' )
@@ -78,6 +79,11 @@ export class PostagemEditComponent implements OnInit
       this.alertas.showAlertSuccess( "Postagem atualizada com sucesso" )
       this.router.navigate( ['/inicio'] )
     })
+  }
+
+  onRetornaInicio( )
+  {
+    this.router.navigate( ['/inicio'] )
   }
 
 }

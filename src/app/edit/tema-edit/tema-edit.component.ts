@@ -5,10 +5,13 @@ import { Tema } from '../../model/Tema';
 import { AlertasService } from '../../service/alertas.service';
 import { TemaService } from '../../service/tema.service';
 import { FormsModule } from '@angular/forms';
+import { BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-tema-edit',
+  standalone: true,
   imports: [FormsModule, RouterModule ],
+  providers: [BsModalService, AlertasService],
   templateUrl: './tema-edit.component.html',
   styleUrl: './tema-edit.component.css'
 })
@@ -48,6 +51,11 @@ export class TemaEditComponent implements OnInit
       this.alertas.showAlertSuccess( "Tema atualizado com sucesso!" )
       this.router.navigate( ['/tema'] )
     })
+  }
+
+  onRetornaTema( )
+  {
+    this.router.navigate( ['/tema'] )
   }
 
 }
