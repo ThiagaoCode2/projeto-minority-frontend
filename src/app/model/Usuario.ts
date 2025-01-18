@@ -8,5 +8,8 @@ export class Usuario
     public senha!:         string
     public foto!:          string
     public tipoDeUsuario!: string
+    public linkedin!:      string
+    public profissao!:     string
+    public empresa!:       string
     public postagem!:      Postagem[]
 }

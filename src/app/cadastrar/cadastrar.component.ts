@@ -30,7 +30,6 @@ export class CadastrarComponent
 
   cadastrar( )
   {
-    // console.log( JSON.stringify( this.usuario ) ) // -->  inicializao do cadastrar
     this.usuario.tipoDeUsuario = this.tipoUsuario
 
     if( this.usuario.senha != this.confirmarSenha )
