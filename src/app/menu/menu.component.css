@@ -9,9 +9,11 @@ a{
    cursor: pointer;
 }
 
-.fundin-gif{
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('https://imgur.com/a/c1DWNJE.gif')
-}
+.profile-picture {
+    width: 50px; /* Largura da imagem */
+    height: 50px; /* Altura da imagem */
+    border-radius: 50%; /* Deixa a imagem circular */
+    background-size: cover; /* Preenche o espaço mantendo a proporção */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+  }

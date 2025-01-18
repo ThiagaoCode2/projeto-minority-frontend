@@ -30,11 +30,14 @@ export class EntrarComponent
     this.auth.entrar( this.usuarioLogin ).subscribe( ( resp: UsuarioLogin )=> {
       this.usuarioLogin = resp
 
-      environment.token = this.usuarioLogin.token
-      environment.nome  = this.usuarioLogin.nome
-      environment.foto  = this.usuarioLogin.foto
-      environment.id    = this.usuarioLogin.id
-      environment.tipo  = this.usuarioLogin.tipo
+      environment.token         = this.usuarioLogin.token
+      environment.nome          = this.usuarioLogin.nome
+      environment.foto          = this.usuarioLogin.foto
+      environment.id            = this.usuarioLogin.id
+      environment.tipoDeUsuario = this.usuarioLogin.tipoDeUsuario
+      environment.linkedin      = this.usuarioLogin.linkedin
+      environment.profissao     = this.usuarioLogin.profissao
+      environment.empresa       = this.usuarioLogin.empresa
       
       this.router.navigate( ['/inicio'] )
 

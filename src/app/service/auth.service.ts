@@ -50,7 +50,7 @@ export class AuthService
   {
     let ok = false
     
-    if( environment.tipo == 'admin' )
+    if( environment.tipoDeUsuario == 'admin' )
     {
       ok = true
     }

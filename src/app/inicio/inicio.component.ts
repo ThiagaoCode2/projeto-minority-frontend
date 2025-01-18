@@ -80,7 +80,6 @@ export class InicioComponent implements OnInit
   {
     this.postagemService.getAllPostagens( ).subscribe( (resp: Postagem[] ) => {
       this.listaPostagens = resp
-      // console.log( "~lista postagem "+JSON.stringify( this.listaPostagens ) )
     })
 
   }
@@ -88,7 +87,6 @@ export class InicioComponent implements OnInit
   findByIdUsuario(){
     this.authService.getByIdUsuario( this.idUsuario ).subscribe((resp: Usuario) => {
       this.usuario = resp
-      // console.log("~id usuario "+JSON.stringify(this.idUsuario))
     })
 
   }

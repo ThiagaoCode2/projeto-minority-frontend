@@ -6,24 +6,26 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-menu',
+  standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
 export class MenuComponent implements OnInit
 {
-  nome = environment.nome
-  foto = environment.foto
-  id   = environment.id
-  //token = environment.token
+  nome      = environment.nome
+  foto      = environment.foto
+  id        = environment.id
+  linkedin  = environment.linkedin
+  profissao = environment.profissao
+  empresa   = environment.empresa
   
   constructor(
     private router: Router,
     public auth: AuthService
   ) { }
 
-  ngOnInit( ) 
-  {  }
+  ngOnInit( ) {  }
 
   sair( )
   {
