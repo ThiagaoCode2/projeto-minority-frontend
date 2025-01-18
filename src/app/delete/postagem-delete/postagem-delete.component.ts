@@ -5,10 +5,13 @@ import { Postagem } from '../../model/Postagem';
 import { AlertasService } from '../../service/alertas.service';
 import { PostagemService } from '../../service/postagem.service';
 import { CommonModule } from '@angular/common'; 
+import { BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-postagem-delete',
+  standalone: true,
   imports: [CommonModule, RouterModule],
+  providers: [BsModalService, AlertasService],
   templateUrl: './postagem-delete.component.html',
   styleUrl: './postagem-delete.component.css'
 })
@@ -26,7 +29,6 @@ export class PostagemDeleteComponent implements OnInit
 
   ngOnInit( ) 
   {
-    window.scroll( 0,0 )
 
     if( environment.token == "" ) 
     {
@@ -51,6 +53,11 @@ export class PostagemDeleteComponent implements OnInit
       this.alertas.showAlertSuccess( 'Postagem apagada com sucesso!' )
       this.router.navigate( ['/inicio'] )
     })
+  }
+
+  onRetornaInicio( )
+  {
+    this.router.navigate(['/inicio'])
   }
 
 }

@@ -4,10 +4,13 @@ import { environment } from '../../../environments/environment.prod';
 import { Tema } from '../../model/Tema';
 import { AlertasService } from '../../service/alertas.service';
 import { TemaService } from '../../service/tema.service';
+import { BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-teme-delete',
+  standalone: true,
   imports: [RouterModule],
+  providers: [BsModalService, AlertasService],
   templateUrl: './teme-delete.component.html',
   styleUrl: './teme-delete.component.css'
 })
@@ -47,6 +50,11 @@ export class TemaDeleteComponent implements OnInit
       this.alertas.showAlertSuccess( 'Tema apagado com sucesso!' )
       this.router.navigate( ['/tema'] )
     })
+  }
+
+  onRetornaTema( )
+  {
+    this.router.navigate(['/tema'])
   }
 
 }
