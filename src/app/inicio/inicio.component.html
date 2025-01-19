@@ -18,8 +18,8 @@
           <div class="row d-flex justify-content-center mt-3 mb-5">
             <div class="col-md-6">
               
-              <button class="btn btn-info me-2" data-toggle="modal" data-target="#novaPostagem">Nova Postagem</button>
-              <a  class="btn btn-outline-info" href="#postagens">Ver Postagens</a> <!-- *ngIf="authService.adm()" // metodo para permitir apenas funcoes aos admin -->
+              <button class="btn btn-dark me-2" data-toggle="modal" data-target="#novaPostagem">Nova Postagem</button>
+              <a  class="btn btn-outline-dark" href="#postagens">Ver Postagens</a> <!-- *ngIf="authService.adm()" // metodo para permitir apenas funcoes aos admin -->
     
             </div>
           </div>
@@ -171,8 +171,8 @@
   
         </div>
         <div class="modal-footer">
+          <button type="button" class="btn btn-success" (click)="publicar( )" data-dismiss="modal">Publicar</button>
           <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-success" (click)="publicar()" data-dismiss="modal">Publicar</button>
         </div>
       </div>
     </div>

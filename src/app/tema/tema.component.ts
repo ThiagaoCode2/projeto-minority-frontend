@@ -6,10 +6,13 @@ import { AlertasService } from '../service/alertas.service';
 import { TemaService } from '../service/tema.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-tema',
+  standalone: true,
   imports: [CommonModule, RouterModule, FormsModule],
+  providers: [BsModalService, AlertasService],
   templateUrl: './tema.component.html',
   styleUrl: './tema.component.css'
 })
@@ -58,6 +61,16 @@ export class TemaComponent implements OnInit
       this.findAllTemas( )
       this.tema = new Tema( ) // --> zerar tema deixar limpa a tela. QUestao de UX
     })
+  }
+
+  editar( id: number ): void 
+  {
+    this.router.navigate( ['/tema-edit', id] );
+  }
+  
+  apagar( id: number ): void 
+  {
+    this.router.navigate( ['/tema-delete', id] );
   }
 
 }

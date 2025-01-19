@@ -18,7 +18,7 @@ export class TemaService
   // TROCAR END POINTS APÒS DEPLOY BACKEND -- THIAGO
   getAllTema(): Observable<Tema[]> 
   {
-    return this.http.get<Tema[]>( "http://localhost:8080/tema" ) 
+    return this.http.get<Tema[]>( 'http://localhost:8080/tema' ) 
   }
 
   getByIdTema( id: number ): Observable<Tema>
@@ -33,12 +33,12 @@ export class TemaService
 
   postTema( tema: Tema ): Observable<Tema>
   {
-    return this.http.post<Tema>( "http://localhost:8080/tema", tema )
+    return this.http.post<Tema>( 'http://localhost:8080/tema', tema )
   }
 
   putTema( tema: Tema ): Observable<Tema>
   {
-    return this.http.put<Tema>( "http://localhost:8080/tema", tema )
+    return this.http.put<Tema>( 'http://localhost:8080/tema', tema )
   }
 
   deleteTema( id: number )

@@ -18,7 +18,7 @@ export class PostagemService
   // TROCAR END POINTS APÒS DEPLOY BACKEND -- THIAGO
   getAllPostagens(): Observable<Postagem[]>
   {
-    return this.http.get<Postagem[]>( "http://localhost:8080/postagens" )
+    return this.http.get<Postagem[]>( 'http://localhost:8080/postagens' )
   }
 
   getByIdPostagem( id: number ): Observable<Postagem>
@@ -34,12 +34,12 @@ export class PostagemService
 
   postPostagem( postagem: Postagem ): Observable<Postagem>
   {
-    return this.http.post<Postagem>( "http://localhost:8080/postagens/salvar", postagem )
+    return this.http.post<Postagem>( 'http://localhost:8080/postagens/salvar', postagem )
   }
 
   putPostagem( postagem: Postagem ): Observable<Postagem>
   {
-    return this.http.put<Postagem>( "http://localhost:8080/postagens/alterar", postagem )
+    return this.http.put<Postagem>( 'http://localhost:8080/postagens/alterar', postagem )
   }
 
   deletePostagem( id: number )
