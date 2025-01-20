@@ -52,6 +52,13 @@ export class PostagemEditComponent implements OnInit
   {
     this.postagemService.getByIdPostagem( id ).subscribe( ( resp: Postagem ) => {
       this.postagem = resp
+
+      // Se o tema existir na postagem, inicialize idTema
+      if( this.postagem.tema && this.postagem.tema.id ) 
+      {
+        this.idTema = this.postagem.tema.id;
+      }
+      
     })
   }
 

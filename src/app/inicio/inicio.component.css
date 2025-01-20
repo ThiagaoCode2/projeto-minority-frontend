@@ -33,11 +33,18 @@
      100%{background-position:50% 0%}
  }
 
- .image-container {
+.image-container {
     width: 500px;
     height: 500px;
-    background-image: url('https://imgur.com/d3Qia8W.jpg');
-    background-size: cover; /* Ajusta a imagem para cobrir toda a área */
-    background-position: center; /* Centraliza a imagem */
-    border-radius: 50%; /* Deixa a imagem circular, se necessário */
+    background-image: url('../../assets/gif/gif_com_fundo_Editar-VEED_fundo_verde.gif');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.profile-picture {
+    display: inline-block;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
   }

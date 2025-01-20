@@ -19,7 +19,7 @@
             <div class="col-md-6">
               
               <button class="btn btn-dark me-2" data-toggle="modal" data-target="#novaPostagem">Nova Postagem</button>
-              <a  class="btn btn-outline-dark" href="#postagens">Ver Postagens</a> <!-- *ngIf="authService.adm()" // metodo para permitir apenas funcoes aos admin -->
+              <button class="btn btn-outline-dark" (click)="scrollToPostagens( )">Ver Postagens</button>
     
             </div>
           </div>
@@ -37,6 +37,7 @@
 <div class="container mb-5 mt-5" id="postagens">
     
     <nav>
+
       <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
         <a class="nav-item nav-link active text-success font-weight-bold" id="nav-todasPostagens-tab" data-toggle="tab"
           href="#todasPostagens" role="tab" aria-controls="nav-todasPostagens" aria-selected="true">Todas as postagens</a>
@@ -48,9 +49,11 @@
         <a class="nav-item nav-link text-success font-weight-bold" id="nav-Temas-tab" data-toggle="tab" href="#Temas"
           role="tab" aria-controls="nav-Temas" aria-selected="false">Postagem por tema</a>
       </div>
+
     </nav>
   
     <div class="tab-content mt-5" id="nav-tabContent">
+
       <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
   
         <div class="row d-flex justify-content-center mt-5 mb-5">
@@ -70,9 +73,25 @@
               <small class="text-muted mb-3">Tema: {{item.tema.descricao}}</small>
   
               <p class="card-text mt-3">{{item.texto}}</p>
-              <p class="card-text"><small class="text-muted">Data: {{item.data | date: 'dd/MM/yyyy'}} às {{item.data |
-                  date: 'HH:mm'}}</small></p>
-              <p class="card-text"><small class="text-muted">Usuário: {{item.usuario.nome}}</small></p>
+              <p class="card-text"><small class="text-muted">Data: {{item.date | date: 'dd/MM/yyyy'}} às {{item.date | date: 'HH:mm'}}</small></p>
+
+              <div class="card-text d-flex align-items-center">
+                <div 
+                  class="profile-picture img-fluid rounded-circle d-inline-block mr-2"
+                  [ngStyle]="{'background-image': 'url(' + item.usuario.foto + '.jpg)'}"
+                  style="width: 40px; height: 40px; background-size: cover; background-position: center;"
+                ></div>
+                <small class="text-muted">
+                  Usuário: 
+                  <a [href]="item.usuario.linkedin" target="_blank" rel="noopener noreferrer">
+                    {{item.usuario.nome}}
+                  </a>
+                </small>
+              </div>
+
+              <div class="card-text d-flex align-items-center"><small class="text-muted">Profissão: {{item.usuario.profissao}}</small></div>
+              <div class="card-text d-flex align-items-center"><small class="text-muted">Empresa: {{item.usuario.empresa}}</small></div>
+
             </div>
           </div>
   
@@ -82,20 +101,18 @@
   
       <div class="tab-pane fade" id="Postagens" role="tabpanel" aria-labelledby="nav-Postagens-tab">
         
-  
         <div class="card-columns">
-          <div class="card text-center" *ngFor="let postagem of usuario.postagem | orderBy : key : reverse">
+          <div class="card text-center" *ngFor="let postagem of usuario.minhasPostagens | orderBy : key : reverse">
             <div class="card-body">
               <h5 class="card-title m-0">{{postagem.titulo}}</h5>
               <small class="text-muted mb-3">Tema: {{postagem.tema.descricao}}</small>
   
               <p class="card-text mt-3">{{postagem.texto}}</p>
-              <p class="card-text"><small class="text-muted">Data: {{postagem.data | date: 'dd/MM/yyyy'}} às
-                  {{postagem.data | date: 'HH:mm'}}</small></p>
+              <p class="card-text"><small class="text-muted">Data: {{postagem.date | date: 'dd/MM/yyyy'}} às
+                  {{postagem.date | date: 'HH:mm'}}</small></p>
   
               <a [routerLink]="['/postagem-edit', postagem.id]" class="text-info mr-3" href="">Editar</a>
               <a [routerLink]="['/postagem-delete', postagem.id]" class="text-danger" href="">Apagar</a>
-  
   
             </div>
           </div>
@@ -121,11 +138,26 @@
             <div class="card-body">
               <h5 class="card-title m-0">{{item.titulo}}</h5>
   
-  
               <p class="card-text mt-3">{{item.texto}}</p>
-              <p class="card-text"><small class="text-muted">Data: {{item.data | date: 'dd/MM/yyyy'}} às {{item.data |
-                  date: 'HH:mm'}}</small></p>
-              <p class="card-text"><small class="text-muted">Usuário: {{item.usuario.nome}}</small></p>
+              <p class="card-text"><small class="text-muted">Data: {{item.date | date: 'dd/MM/yyyy'}} às {{item.date | date: 'HH:mm'}}</small></p>
+              
+              <div class="card-text d-flex align-items-center">
+                <div 
+                  class="profile-picture img-fluid rounded-circle d-inline-block mr-2"
+                  [ngStyle]="{'background-image': 'url(' + item.usuario.foto + '.jpg)'}"
+                  style="width: 40px; height: 40px; background-size: cover; background-position: center;"
+                ></div>
+                <small class="text-muted">
+                  Usuário: 
+                  <a [href]="item.usuario.linkedin" target="_blank" rel="noopener noreferrer">
+                    {{item.usuario.nome}}
+                  </a>
+                </small>
+              </div>
+              
+              <div class="card-text d-flex align-items-center"><small class="text-muted">Profissão: {{item.usuario.profissao}}</small></div>
+              <div class="card-text d-flex align-items-center"><small class="text-muted">Empresa: {{item.usuario.empresa}}</small></div>
+
             </div>
           </div>
   

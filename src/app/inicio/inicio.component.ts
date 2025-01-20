@@ -78,14 +78,15 @@ export class InicioComponent implements OnInit
 
   getAllPostagens( ) 
   {
-    this.postagemService.getAllPostagens( ).subscribe( (resp: Postagem[] ) => {
+    this.postagemService.getAllPostagens( ).subscribe( ( resp: Postagem[] ) => {
       this.listaPostagens = resp
     })
 
   }
 
-  findByIdUsuario(){
-    this.authService.getByIdUsuario( this.idUsuario ).subscribe((resp: Usuario) => {
+  findByIdUsuario( )
+  {
+    this.authService.getByIdUsuario( this.idUsuario ).subscribe( ( resp: Usuario ) => {
       this.usuario = resp
     })
 
@@ -132,6 +133,15 @@ export class InicioComponent implements OnInit
       this.temaService.getByNomeTema( this.nomeTema ).subscribe( ( resp: Tema[] ) => {
         this.listaTemas = resp
       })
+    }
+  }
+
+  scrollToPostagens( ): void 
+  {
+    const element = document.getElementById( 'postagens' );
+    if( element )
+    {
+      element.scrollIntoView( { behavior: 'smooth', block: 'start' } );
     }
   }
 
