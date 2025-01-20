@@ -1,0 +1,19 @@
+.fs-16{
+    font-size:16pt;
+}
+.pxl-7{
+    padding-left: 7px;
+}
+
+a{
+   cursor: pointer;
+}
+
+.profile-picture {
+    width: 50px; /* Largura da imagem */
+    height: 50px; /* Altura da imagem */
+    border-radius: 50%; /* Deixa a imagem circular */
+    background-size: cover; /* Preenche o espaço mantendo a proporção */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+  }
