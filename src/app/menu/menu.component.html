@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light navbar-color fundin-gif">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+    <ul class="navbar-nav ms-auto d-flex align-items-center">
+      <li class="nav-item active">
+        <div
+          class="profile-picture img-fluid rounded-circle"
+          [ngStyle]="{'background-image': 'url(' + foto + '.jpg)'}"
+        ></div>
+      </li>
+      <li class="nav-item pxl-7">
+        <p class="m-0 font-weight-bold text-black fs-16">Olá, {{nome}}</p>
+      </li>
+
+      <li *ngIf="auth.adm()" class="nav-item pxl-7">
+        <a [routerLink]="['/usuario-edit', id]">
+          <p class="text-black fs-16 ml-3">
+            Editar <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+          </p>
+        </a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto d-flex align-items-center">
+      <li class="nav-item me-3">
+        <a (click)="sair()" class="m-0 font-weight-bold text-black fs-16"
+          >Sair <i class="fa fa-sign-out" aria-hidden="true"></i
+        ></a>
+      </li>
+    </ul>
+  </div>
+</nav>
