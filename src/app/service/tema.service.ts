@@ -18,32 +18,32 @@ export class TemaService
   // TROCAR END POINTS APÒS DEPLOY BACKEND -- THIAGO
   getAllTema(): Observable<Tema[]> 
   {
-    return this.http.get<Tema[]>( 'http://localhost:8080/tema' ) 
+    return this.http.get<Tema[]>( 'https://projeto-minority-backend.onrender.com/tema' ) 
   }
 
   getByIdTema( id: number ): Observable<Tema>
   {
-    return this.http.get<Tema>( `http://localhost:8080/tema/${id}` )
+    return this.http.get<Tema>( `https://projeto-minority-backend.onrender.com/tema/${id}` )
   }
 
   getByNomeTema( nome: string ): Observable<Tema[]>
   {
-    return this.http.get<Tema[]>( `http://localhost:8080/tema/nome/${nome}` )
+    return this.http.get<Tema[]>( `https://projeto-minority-backend.onrender.com/tema/nome/${nome}` )
   }
 
   postTema( tema: Tema ): Observable<Tema>
   {
-    return this.http.post<Tema>( 'http://localhost:8080/tema', tema )
+    return this.http.post<Tema>( 'https://projeto-minority-backend.onrender.com/tema', tema )
   }
 
   putTema( tema: Tema ): Observable<Tema>
   {
-    return this.http.put<Tema>( 'http://localhost:8080/tema', tema )
+    return this.http.put<Tema>( 'https://projeto-minority-backend.onrender.com/tema', tema )
   }
 
   deleteTema( id: number )
   {
-    return this.http.delete( `http://localhost:8080/tema/${id}` )
+    return this.http.delete( `https://projeto-minority-backend.onrender.com/tema/${id}` )
   }
 
 }
