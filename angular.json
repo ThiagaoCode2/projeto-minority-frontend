@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/projeto-minority-frontend",
+            "outputPath": "dist/browser",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -39,14 +39,7 @@
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
-            },
-            "ignoredRoutes": [
-             "/tema-edit/:id",
-             "/tema-delete/:id",
-             "/postagem-edit/:id",
-             "/postagem-delete/:id",
-             "/usuario-edit/:id"
-            ]
+            }
           },
           "configurations": {
             "production": {
