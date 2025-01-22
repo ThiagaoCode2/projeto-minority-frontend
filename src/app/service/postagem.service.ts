@@ -18,32 +18,32 @@ export class PostagemService
   // TROCAR END POINTS APÒS DEPLOY BACKEND -- THIAGO
   getAllPostagens(): Observable<Postagem[]>
   {
-    return this.http.get<Postagem[]>( 'http://localhost:8080/postagens' )
+    return this.http.get<Postagem[]>( 'https://projeto-minority-backend.onrender.com/postagens' )
   }
 
   getByIdPostagem( id: number ): Observable<Postagem>
   {
-    return this.http.get<Postagem>( `http://localhost:8080/postagens/${id}` )
+    return this.http.get<Postagem>( `https://projeto-minority-backend.onrender.com/postagens/${id}` )
   }
 
   getByTituloPostagem( titulo: string ): Observable<Postagem[]>
   {
-    return this.http.get<Postagem[]>( `http://localhost:8080/postagens/titulo/${titulo}` )
+    return this.http.get<Postagem[]>( `https://projeto-minority-backend.onrender.com/postagens/titulo/${titulo}` )
   }
 
 
   postPostagem( postagem: Postagem ): Observable<Postagem>
   {
-    return this.http.post<Postagem>( 'http://localhost:8080/postagens/salvar', postagem )
+    return this.http.post<Postagem>( 'https://projeto-minority-backend.onrender.com/postagens/salvar', postagem )
   }
 
   putPostagem( postagem: Postagem ): Observable<Postagem>
   {
-    return this.http.put<Postagem>( 'http://localhost:8080/postagens/alterar', postagem )
+    return this.http.put<Postagem>( 'https://projeto-minority-backend.onrender.com/postagens/alterar', postagem )
   }
 
   deletePostagem( id: number )
   {
-    return this.http.delete<Postagem>( `http://localhost:8080/postagens/deletar/${id}` )
+    return this.http.delete<Postagem>( `https://projeto-minority-backend.onrender.com/postagens/deletar/${id}` )
   }
 }
