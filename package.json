@@ -4,10 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && ng run projeto-minority-frontend:server",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:projeto-minority-frontend": "node dist/projeto-minority-frontend/server/server.mjs"
+    "serve:ssr:projeto-minority-frontend": "node dist/projeto-minority-frontend/server/main.js"
   },
   "private": true,
   "dependencies": {
