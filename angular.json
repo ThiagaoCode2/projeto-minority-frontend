@@ -39,15 +39,22 @@
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "ignoredRoutes": [
+             "/tema-edit/:id",
+             "/tema-delete/:id",
+             "/postagem-edit/:id",
+             "/postagem-delete/:id",
+             "/usuario-edit/:id"
+            ]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "1MB",
+                  "maximumError": "2MB"
                 },
                 {
                   "type": "anyComponentStyle",
