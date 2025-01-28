@@ -53,15 +53,13 @@
               "outputHashing": "all",
               "optimization": true,
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false
             },
             "development": {
               "optimization": false,
-              "sourceMap": true,
-              "extractCss": false
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
