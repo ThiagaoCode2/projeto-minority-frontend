@@ -42,18 +42,16 @@
                         <div class="col-md-6">
                             <label for="confirmSenha">Confirmar senha</label>
                             <input [(ngModel)]="confirmarSenha" class="form-control" type="password" name="confirmSenha" id="confirmSenha" placeholder="Confirme sua senha">
-                            <small *ngIf="!confirmarSenha" class="text-danger">Confirmação de senha é obrigatória</small>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="tipoDeUsuario">Tipo de Usuário</label>
                         <select class="form-control" name="tipoDeUsuario" id="tipoDeUsuario" (change)="tipoUser($event)">
-                            <option value="">Selecione um tipo de usuário</option>
+                            <!-- <option value="">Selecione um tipo de usuário</option> -->
                             <option value="normal">Normal</option>
                             <!-- <option value="admin">Administrador</option> -->
                         </select>
-                        <small *ngIf="!tipoUsuario" class="text-danger">Tipo de usuário é obrigatório</small>
                     </div>
 
                     <div class="form-group">
