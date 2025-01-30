@@ -62,4 +62,17 @@ export class CadastrarComponent
     this.router.navigate( ['/entrar'] )
   }
 
+  isFormValid( ): boolean 
+  {
+    return this.usuario.nome      && 
+           this.usuario.usuario   && 
+           this.usuario.senha     && 
+           this.confirmarSenha    && 
+           this.tipoUsuario       && 
+           this.usuario.linkedin  && 
+           this.usuario.profissao && 
+           this.usuario.empresa ? true : false;
+  }
+  
+
 }
