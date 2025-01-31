@@ -145,4 +145,12 @@ export class InicioComponent implements OnInit
     }
   }
 
+  isPostValid( ): boolean 
+  {
+    return this.postagem.texto  && 
+           this.postagem.tema   && 
+           this.postagem.texto.length >= 10 &&
+           this.postagem.texto.length <= 1000  ? true : false;
+  }
+
 }

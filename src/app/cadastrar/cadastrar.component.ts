@@ -21,9 +21,6 @@ export class CadastrarComponent
 
   confirmarSenha!: string;
   tipoUsuario!:    string;
-
-  usuarioValido:  boolean = false;
-  usuarioTouched: boolean = false;
   
   constructor(
     private authService: AuthService,
@@ -67,18 +64,14 @@ export class CadastrarComponent
 
   isFormValid( ): boolean 
   {
-    return this.usuario.nome      && 
-           this.usuario.usuario   && 
-           this.usuario.senha     && 
-           this.usuario.linkedin  && 
-           this.usuario.profissao && 
-           this.usuario.empresa ? true : false;
-  }
-
-  validarUsuario( ) 
-  {
-    this.usuarioTouched = true;
-    this.usuarioValido = this.usuario.usuario.length >= 5;
+    return this.usuario.nome                && 
+           this.usuario.usuario             && 
+           this.usuario.senha               && 
+           this.usuario.linkedin            && 
+           this.usuario.profissao           && 
+           this.usuario.empresa             &&
+           this.usuario.usuario.length >= 5 &&
+           this.usuario.senha.length   >= 5 ? true : false;
   }
 
 }
