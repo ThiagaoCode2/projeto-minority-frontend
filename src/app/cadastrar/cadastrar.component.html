@@ -21,12 +21,11 @@
 
                     <div class="form-group">
                         <label for="usuario">Usuário</label>
-                        <input [(ngModel)]="usuario.usuario" #usuarioInput="ngModel" class="form-control" type="text" name="usuario" id="usuario" placeholder="Digite seu usuário" required minlength="5">
+                        <input [(ngModel)]="usuario.usuario" class="form-control" type="text" name="usuario" id="usuario" placeholder="Digite seu usuário" (input)="validarUsuario( )">
                         
-                        <small *ngIf="usuarioInput.invalid && usuarioInput.touched" class="text-danger">
+                        <small *ngIf="!usuarioValido && usuarioTouched" class="text-danger">
                             O usuário deve ter no mínimo 5 caracteres.
                         </small>
-
                     </div>
 
                     <div class="form-group">
