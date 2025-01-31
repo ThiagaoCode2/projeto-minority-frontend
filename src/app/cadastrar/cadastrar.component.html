@@ -36,12 +36,11 @@
                         <div class="col-md-6">
                             <label for="senha">Senha</label>
                             <input (input)="confirmSenha($event)" class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
-                            <small *ngIf="!usuario.senha" class="text-danger">Senha é obrigatória</small>
                         </div>
                     
                         <div class="col-md-6">
                             <label for="confirmSenha">Confirmar senha</label>
-                            <input [(ngModel)]="confirmarSenha" class="form-control" type="password" name="confirmSenha" id="confirmSenha" placeholder="Confirme sua senha">
+                            <input [(ngModel)]="usuario.senha" class="form-control" type="password" name="confirmSenha" id="confirmSenha" placeholder="Confirme sua senha">
                         </div>
                     </div>
 
