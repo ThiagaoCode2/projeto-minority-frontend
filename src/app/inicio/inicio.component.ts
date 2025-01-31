@@ -147,8 +147,8 @@ export class InicioComponent implements OnInit
 
   isPostValid( ): boolean 
   {
-    return this.postagem.texto  && 
-           this.postagem.tema   && 
+    return this.tema            && 
+           this.postagem.texto  && 
            this.postagem.texto.length >= 10 &&
            this.postagem.texto.length <= 1000  ? true : false;
   }
