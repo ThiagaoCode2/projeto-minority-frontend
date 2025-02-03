@@ -87,4 +87,16 @@ export class UsuarioEditComponent implements OnInit
     this.router.navigate( ['/inicio'] )
   }
 
+  isFormValid( ): boolean 
+  {
+    return this.usuario.nome                && 
+           this.usuario.usuario             && 
+           this.usuario.senha               && 
+           this.usuario.linkedin            && 
+           this.usuario.profissao           && 
+           this.usuario.empresa             &&
+           this.usuario.usuario.length >= 5 &&
+           this.usuario.senha.length   >= 5 ? true : false;
+  }
+
 }
