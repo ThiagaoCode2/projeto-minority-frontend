@@ -12,18 +12,19 @@ import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
     
-    { path: '', redirectTo: 'entrar', pathMatch: 'full'               },
+    { path: '', redirectTo: 'entrar', pathMatch: 'full'                                                },
 
-    { path: 'entrar',              component: EntrarComponent         },
-    { path: 'cadastrar',           component: CadastrarComponent      },
-    { path: 'inicio',              component: InicioComponent         },
-    { path: 'tema',                component: TemaComponent           },
-    { path: 'tema-edit/:id',       component: TemaEditComponent       },
-    { path: 'tema-delete/:id',     component: TemaDeleteComponent     },
-    { path: 'postagem-edit/:id',   component: PostagemEditComponent   },
-    { path: 'postagem-delete/:id', component: PostagemDeleteComponent },
-    { path: 'usuario-edit/:id',    component: UsuarioEditComponent    }
-  
+    { path: 'entrar',              component: EntrarComponent                                          },
+    { path: 'cadastrar',           component: CadastrarComponent                                       },
+    { path: 'inicio',              component: InicioComponent                                          },
+    { path: 'tema',                component: TemaComponent                                            },
+    { path: 'tema-edit/:id',       component: TemaEditComponent,       data: { renderMode: 'default' } },
+    { path: 'tema-delete/:id',     component: TemaDeleteComponent,     data: { renderMode: 'default' } },
+    { path: 'postagem-edit/:id',   component: PostagemEditComponent,   data: { renderMode: 'default' } },
+    { path: 'postagem-delete/:id', component: PostagemDeleteComponent, data: { renderMode: 'default' } },
+    { path: 'usuario-edit/:id',    component: UsuarioEditComponent,    data: { renderMode: 'default' } }
+    
+    
 ];
 
 @NgModule({
